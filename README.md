@@ -18,9 +18,9 @@ The app will be available in your browser at `localhost:4200`
 
 These are a series of features the app should do, here they are sorted in the priority they have, if you feel unable to complete one you can continue with the next one in hope to do as much as possible in given the time scope.
 
-1.  Fetch the given `.json` file inside `src/app/app.component.ts` when the user writes in the input
-1.  Filter the results given user input, it can be searched by `Name` or one of its `Types`
-1.  Results should be not more than 4 at any time.
+1.  Fetch the given `.json` file inside `src/app/app.component.ts` when the user writes in the input (CHECK)
+1.  Filter the results given user input, it can be searched by `Name` or one of its `Types` (CHECK)
+1.  Results should be not more than 4 at any time. (CHECK)
 1.  Sort elements first if the match the `Name`, then if they match the `Type`
 1.  User can toggle on/off to sort by maximum combat points (`MaxCP`), this should affect the current output
 1.  If the search matches a part of the name, that part of the name should be hightlighted
