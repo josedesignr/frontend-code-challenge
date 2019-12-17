@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   title = "react-code-challenge";
 
   allPokemon = [];
+  pokemonListResult = [];
   constructor() {}
 
   ngOnInit() {
@@ -24,26 +25,27 @@ export class AppComponent implements OnInit{
     fetch(URL_PATH).then(res => res.json())
     .then((data) => {
       this.allPokemon = data;
+      this.pokemonListResult = data;
     })
     .catch(err => { throw err });
   }
 
   searchPokemon( search:string ) {
     if (search) {
-      let pokemonArr:any = [];
+      let pokemonArr = [];
       search = search.toLowerCase();
 
-      for (let pokemon of this.allPokemon ){
+      for (let pokemon of this.allPokemon ) {
         let pokeName = pokemon.Name.toLowerCase();
 
-        if (pokeName.indexOf( search ) >= 0 && pokemonArr.length < 4) {
+        if (pokeName.indexOf( search ) >= 0) {
           pokemonArr.push(pokemon)
         }
       }
-      this.allPokemon = pokemonArr;
+      this.pokemonListResult = pokemonArr.slice(0, 4);
     }
     else {
-      this.getAllPokemon();
+      this.pokemonListResult = this.allPokemon;
     }
   }
 }

@@ -7,7 +7,7 @@
 <input type="text" class="input" placeholder="Pokemon or type" #search (keyup)="searchPokemon(search.value)" />
 <div class="loader"></div>
 <ul class="suggestions">
-  <li *ngFor="let pokemon of allPokemon">
+  <li *ngFor="let pokemon of pokemonListResult">
     <img [src]="pokemon.img" alt="" />
     <div class="info">
       <h1><span class="hl"> {{pokemon.Name}} </span></h1>
